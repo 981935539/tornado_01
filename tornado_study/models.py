@@ -25,8 +25,8 @@ class User(Base):
     articles = relationship('Article', backref='author')
     userinfo = relationship('UserInfo', backref='user', uselist=False)
 
-    def __repr__(self):
-        return '%s(%r)' % (self.__class__.__name__, self.username)
+    # def __repr__(self):
+    #     return '%s(%r)' % (self.__class__.__name__, self.username)
 
 
 class UserInfo(Base):
