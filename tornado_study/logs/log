@@ -1,2 +1,733 @@
 [I 171031 21:32:33 web:1946] 200 GET / (127.0.0.1) 2.68ms
 [W 171031 21:32:33 web:1946] 404 GET /favicon.ico (127.0.0.1) 23.55ms
+[I 171105 21:13:24 web:1946] 304 GET / (127.0.0.1) 19.60ms
+[W 171105 21:13:24 web:1946] 404 GET /favicon.ico (127.0.0.1) 15.35ms
+[W 171105 21:13:33 web:1946] 404 GET /pic_handler (127.0.0.1) 0.48ms
+[I 171105 21:14:43 autoreload:204] /home/python/tornado_01/tornado_study/urls.py modified; restarting server
+[W 171105 21:14:52 web:1946] 404 GET /pic_handler (127.0.0.1) 2.55ms
+[I 171105 21:17:03 autoreload:204] /home/python/tornado_01/tornado_study/handlers/up_show_pic.py modified; restarting server
+[W 171105 21:17:15 web:1946] 404 GET /pic_handler (127.0.0.1) 1.58ms
+[I 171105 21:17:33 autoreload:204] /home/python/tornado_01/tornado_study/urls.py modified; restarting server
+[E 171105 21:17:34 web:1524] Uncaught exception GET /pic (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/pic', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip, deflate, sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36', 'Connection': 'keep-alive', 'Upgrade-Insecure-Requests': '1'})
+    Traceback (most recent call last):
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 1443, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/python/tornado_01/tornado_study/handlers/up_show_pic.py", line 8, in get
+        self.render("up_pic.html")
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 699, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 806, in render_string
+        return t.generate(**namespace)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 345, in generate
+        return execute()
+      File "up_pic_html.generated.py", line 5, in _tt_execute
+        _tt_tmp = _tt_modules.xsrf_from_html()  # up_pic.html:9
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 2961, in __getattr__
+        raise AttributeError(str(e))
+    AttributeError: 'xsrf_from_html'
+[E 171105 21:17:34 web:1946] 500 GET /pic (127.0.0.1) 27.91ms
+[I 171105 21:18:59 web:1946] 200 GET /pic (127.0.0.1) 2.41ms
+[I 171105 21:41:58 web:1946] 200 GET /pic (127.0.0.1) 21.11ms
+[W 171105 21:42:09 web:1946] 404 POST /pic_handle/ (127.0.0.1) 10.06ms
+[I 171105 21:42:37 web:1946] 200 GET /pic (127.0.0.1) 1.64ms
+[W 171105 21:42:43 web:1946] 404 POST /pic/ (127.0.0.1) 3.28ms
+[I 171105 21:43:04 web:1946] 200 GET /pic (127.0.0.1) 1.69ms
+[E 171105 21:43:09 web:1524] Uncaught exception POST /pic (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/pic', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Origin': 'http://127.0.0.1:8000', 'Content-Length': '297932', 'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'Upgrade-Insecure-Requests': '1', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:8000/pic', 'Cache-Control': 'max-age=0', 'Cookie': '_xsrf=2|436f3da3|881ae77622fb116495bddbf7bfd6c101|1509887939', 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36', 'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundaryH78Ew3BSkP1UOX7S'})
+    Traceback (most recent call last):
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 1443, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/python/tornado_01/tornado_study/handlers/up_show_pic.py", line 21, in post
+        with open("../statics/images/"+img_name, "wb") as f:
+    IOError: [Errno 2] No such file or directory: u'../statics/images/mm.jpg'
+[E 171105 21:43:09 web:1946] 500 POST /pic (127.0.0.1) 8.97ms
+[I 171105 21:45:54 autoreload:204] /home/python/tornado_01/tornado_study/handlers/up_show_pic.py modified; restarting server
+[I 171105 21:46:00 web:1946] 200 GET /pic (127.0.0.1) 17.75ms
+[I 171105 21:46:04 log:109] select version()
+[I 171105 21:46:04 log:109] {}
+[I 171105 21:46:04 log:109] select current_schema()
+[I 171105 21:46:04 log:109] {}
+[I 171105 21:46:04 log:109] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+[I 171105 21:46:04 log:109] {}
+[I 171105 21:46:04 log:109] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+[I 171105 21:46:04 log:109] {}
+[I 171105 21:46:04 log:109] show standard_conforming_strings
+[I 171105 21:46:04 log:109] {}
+[I 171105 21:46:04 log:109] BEGIN (implicit)
+[I 171105 21:46:04 log:109] INSERT INTO pictures (name, imge) VALUES (%(name)s, %(imge)s) RETURNING pictures.id
+[I 171105 21:46:04 log:109] {'name': u'mm.jpg', 'imge': <psycopg2.extensions.Binary object at 0x7f20f39a6030>}
+[I 171105 21:46:04 log:109] COMMIT
+[I 171105 21:46:04 web:1946] 200 POST /pic (127.0.0.1) 350.38ms
+[I 171105 21:55:45 autoreload:204] /home/python/tornado_01/tornado_study/handlers/up_show_pic.py modified; restarting server
+[I 171105 21:55:52 web:1946] 200 GET /pic (127.0.0.1) 17.07ms
+[I 171105 21:55:57 log:109] select version()
+[I 171105 21:55:57 log:109] {}
+[I 171105 21:55:57 log:109] select current_schema()
+[I 171105 21:55:57 log:109] {}
+[I 171105 21:55:57 log:109] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+[I 171105 21:55:57 log:109] {}
+[I 171105 21:55:57 log:109] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+[I 171105 21:55:57 log:109] {}
+[I 171105 21:55:57 log:109] show standard_conforming_strings
+[I 171105 21:55:57 log:109] {}
+[I 171105 21:55:57 log:109] BEGIN (implicit)
+[I 171105 21:55:57 log:109] INSERT INTO pictures (name, imge) VALUES (%(name)s, %(imge)s) RETURNING pictures.id
+[I 171105 21:55:57 log:109] {'name': u'm.jpg', 'imge': <psycopg2.extensions.Binary object at 0x7f762a451030>}
+[I 171105 21:55:57 log:109] COMMIT
+[E 171105 21:55:57 web:1524] Uncaught exception POST /pic (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/pic', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Origin': 'http://127.0.0.1:8000', 'Content-Length': '13736', 'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'Upgrade-Insecure-Requests': '1', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:8000/pic', 'Cache-Control': 'max-age=0', 'Cookie': '_xsrf=2|436f3da3|881ae77622fb116495bddbf7bfd6c101|1509887939', 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36', 'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundaryzYNZZWKFBq2EyDJB'})
+    Traceback (most recent call last):
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 1443, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/python/tornado_01/tornado_study/handlers/up_show_pic.py", line 34, in post
+        self.render("pic_html", name=img_name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 699, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 803, in render_string
+        t = loader.load(template_name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 424, in load
+        self.templates[name] = self._create_template(name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 451, in _create_template
+        with open(path, "rb") as f:
+    IOError: [Errno 2] No such file or directory: '/home/python/tornado_01/tornado_study/templates/pic_html'
+[E 171105 21:55:57 web:1946] 500 POST /pic (127.0.0.1) 168.63ms
+[I 171105 21:56:23 autoreload:204] /home/python/tornado_01/tornado_study/handlers/up_show_pic.py modified; restarting server
+[I 171105 21:56:26 web:1946] 200 GET /pic (127.0.0.1) 6.15ms
+[I 171105 21:56:32 log:109] select version()
+[I 171105 21:56:32 log:109] {}
+[I 171105 21:56:32 log:109] select current_schema()
+[I 171105 21:56:32 log:109] {}
+[I 171105 21:56:32 log:109] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+[I 171105 21:56:32 log:109] {}
+[I 171105 21:56:32 log:109] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+[I 171105 21:56:32 log:109] {}
+[I 171105 21:56:32 log:109] show standard_conforming_strings
+[I 171105 21:56:32 log:109] {}
+[I 171105 21:56:32 log:109] BEGIN (implicit)
+[I 171105 21:56:32 log:109] INSERT INTO pictures (name, imge) VALUES (%(name)s, %(imge)s) RETURNING pictures.id
+[I 171105 21:56:32 log:109] {'name': u'm.jpg', 'imge': <psycopg2.extensions.Binary object at 0x7fbdfe7a7030>}
+[I 171105 21:56:32 log:109] COMMIT
+[E 171105 21:56:32 web:1524] Uncaught exception POST /pic (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/pic', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Origin': 'http://127.0.0.1:8000', 'Content-Length': '13736', 'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'Upgrade-Insecure-Requests': '1', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:8000/pic', 'Cache-Control': 'max-age=0', 'Cookie': '_xsrf=2|436f3da3|881ae77622fb116495bddbf7bfd6c101|1509887939', 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36', 'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundarycCmtiT5StAkeBqwe'})
+    Traceback (most recent call last):
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 1443, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/python/tornado_01/tornado_study/handlers/up_show_pic.py", line 34, in post
+        self.render("pic_show", name=img_name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 699, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 803, in render_string
+        t = loader.load(template_name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 424, in load
+        self.templates[name] = self._create_template(name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 451, in _create_template
+        with open(path, "rb") as f:
+    IOError: [Errno 2] No such file or directory: '/home/python/tornado_01/tornado_study/templates/pic_show'
+[E 171105 21:56:32 web:1946] 500 POST /pic (127.0.0.1) 143.41ms
+[I 171105 21:56:45 autoreload:204] /home/python/tornado_01/tornado_study/handlers/up_show_pic.py modified; restarting server
+[I 171105 21:56:48 web:1946] 200 GET /pic (127.0.0.1) 14.68ms
+[I 171105 21:56:52 log:109] select version()
+[I 171105 21:56:52 log:109] {}
+[I 171105 21:56:52 log:109] select current_schema()
+[I 171105 21:56:52 log:109] {}
+[I 171105 21:56:52 log:109] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+[I 171105 21:56:52 log:109] {}
+[I 171105 21:56:52 log:109] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+[I 171105 21:56:52 log:109] {}
+[I 171105 21:56:52 log:109] show standard_conforming_strings
+[I 171105 21:56:52 log:109] {}
+[I 171105 21:56:52 log:109] BEGIN (implicit)
+[I 171105 21:56:52 log:109] INSERT INTO pictures (name, imge) VALUES (%(name)s, %(imge)s) RETURNING pictures.id
+[I 171105 21:56:52 log:109] {'name': u'm.jpg', 'imge': <psycopg2.extensions.Binary object at 0x7fdc80109030>}
+[I 171105 21:56:52 log:109] COMMIT
+[I 171105 21:56:53 web:1946] 200 POST /pic (127.0.0.1) 125.10ms
+[W 171105 21:56:53 web:1946] 404 GET /static/media/m.jpg (127.0.0.1) 10.09ms
+[I 171105 21:57:17 web:1946] 200 GET /pic (127.0.0.1) 1.62ms
+[I 171105 21:57:22 log:109] select version()
+[I 171105 21:57:22 log:109] {}
+[I 171105 21:57:22 log:109] select current_schema()
+[I 171105 21:57:22 log:109] {}
+[I 171105 21:57:22 log:109] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+[I 171105 21:57:22 log:109] {}
+[I 171105 21:57:22 log:109] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+[I 171105 21:57:22 log:109] {}
+[I 171105 21:57:22 log:109] show standard_conforming_strings
+[I 171105 21:57:22 log:109] {}
+[I 171105 21:57:22 log:109] BEGIN (implicit)
+[I 171105 21:57:22 log:109] INSERT INTO pictures (name, imge) VALUES (%(name)s, %(imge)s) RETURNING pictures.id
+[I 171105 21:57:22 log:109] {'name': u'm.jpg', 'imge': <psycopg2.extensions.Binary object at 0x7fdc80109030>}
+[I 171105 21:57:22 log:109] COMMIT
+[I 171105 21:57:22 web:1946] 200 POST /pic (127.0.0.1) 46.43ms
+[I 171105 21:57:22 web:1946] 200 GET /static/images/m.jpg (127.0.0.1) 94.89ms
+[I 171106 17:10:49 web:1946] 200 GET /pic (127.0.0.1) 45.93ms
+[W 171106 17:10:49 web:1946] 404 GET /favicon.ico (127.0.0.1) 19.51ms
+[I 171106 17:11:07 log:109] select version()
+[I 171106 17:11:07 log:109] {}
+[I 171106 17:11:07 log:109] select current_schema()
+[I 171106 17:11:07 log:109] {}
+[I 171106 17:11:07 log:109] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+[I 171106 17:11:07 log:109] {}
+[I 171106 17:11:07 log:109] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+[I 171106 17:11:07 log:109] {}
+[I 171106 17:11:07 log:109] show standard_conforming_strings
+[I 171106 17:11:07 log:109] {}
+[I 171106 17:11:07 log:109] BEGIN (implicit)
+[I 171106 17:11:07 log:109] INSERT INTO pictures (name, imge) VALUES (%(name)s, %(imge)s) RETURNING pictures.id
+[I 171106 17:11:07 log:109] {'name': u'2017-04-10 11-54-57\u5c4f\u5e55\u622a\u56fe.png', 'imge': <psycopg2.extensions.Binary object at 0x7fba715c1f30>}
+[I 171106 17:11:07 log:109] COMMIT
+[E 171106 17:11:07 template:317] pic_show.html code:
+     1  def _tt_execute():  # pic_show.html:0
+     2      _tt_buffer = []  # pic_show.html:0
+     3      _tt_append = _tt_buffer.append  # pic_show.html:0
+     4      _tt_append('<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<title>\xe5\xb1\x95\xe7\xa4\xba\xe4\xb8\x8a\xe4\xbc\xa0\xe7\x9a\x84\xe5\x9b\xbe\xe7\x89\x87</title>\n</head>\n<body>\n<!--<img src="/static/images/')  # pic_show.html:8
+     5      _tt_tmp = name  # pic_show.html:8
+     6      if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:8
+     7      else: _tt_tmp = _tt_utf8(str(_tt_tmp))  # pic_show.html:8
+     8      _tt_tmp = _tt_utf8(xhtml_escape(_tt_tmp))  # pic_show.html:8
+     9      _tt_append(_tt_tmp)  # pic_show.html:8
+    10      _tt_append('"/>-->\n<img src="')  # pic_show.html:9
+    11      _tt_tmp = static_url('/images/'+{{name  # pic_show.html:9
+    12      if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:9
+    13      else: _tt_tmp = _tt_utf8(str(_tt_tmp))  # pic_show.html:9
+    14      _tt_tmp = _tt_utf8(xhtml_escape(_tt_tmp))  # pic_show.html:9
+    15      _tt_append(_tt_tmp)  # pic_show.html:9
+    16      _tt_append(')}}">\n</body>\n</html>')  # pic_show.html:11
+    17      return _tt_utf8('').join(_tt_buffer)  # pic_show.html:0
+[E 171106 17:11:07 web:1524] Uncaught exception POST /pic (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/pic', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Origin': 'http://127.0.0.1:8000', 'Content-Length': '31510', 'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'Upgrade-Insecure-Requests': '1', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:8000/pic', 'Cache-Control': 'max-age=0', 'Cookie': '_xsrf=2|3fc93e23|9e6d7eca95d4c6d9770849d2888d3bab|1509959449', 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36', 'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundaryef77idsnSSInbk6z'})
+    Traceback (most recent call last):
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 1443, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/python/tornado_01/tornado_study/handlers/up_show_pic.py", line 34, in post
+        self.render("pic_show.html", name=img_name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 699, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 803, in render_string
+        t = loader.load(template_name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 424, in load
+        self.templates[name] = self._create_template(name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 452, in _create_template
+        template = Template(f.read(), name=name, loader=self)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 314, in __init__
+        "exec", dont_inherit=True)
+      File "pic_show_html.generated.py", line 12
+        if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:9
+                                                ^
+    SyntaxError: invalid syntax
+[E 171106 17:11:07 web:1946] 500 POST /pic (127.0.0.1) 395.47ms
+[I 171106 17:13:07 web:1946] 200 GET /pic (127.0.0.1) 4.56ms
+[I 171106 17:13:12 log:109] select version()
+[I 171106 17:13:12 log:109] {}
+[I 171106 17:13:12 log:109] select current_schema()
+[I 171106 17:13:12 log:109] {}
+[I 171106 17:13:12 log:109] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+[I 171106 17:13:12 log:109] {}
+[I 171106 17:13:12 log:109] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+[I 171106 17:13:12 log:109] {}
+[I 171106 17:13:12 log:109] show standard_conforming_strings
+[I 171106 17:13:12 log:109] {}
+[I 171106 17:13:12 log:109] BEGIN (implicit)
+[I 171106 17:13:12 log:109] INSERT INTO pictures (name, imge) VALUES (%(name)s, %(imge)s) RETURNING pictures.id
+[I 171106 17:13:12 log:109] {'name': u'2017-04-10 11-54-57\u5c4f\u5e55\u622a\u56fe.png', 'imge': <psycopg2.extensions.Binary object at 0x7fba7045d1e8>}
+[I 171106 17:13:12 log:109] COMMIT
+[E 171106 17:13:12 template:317] pic_show.html code:
+     1  def _tt_execute():  # pic_show.html:0
+     2      _tt_buffer = []  # pic_show.html:0
+     3      _tt_append = _tt_buffer.append  # pic_show.html:0
+     4      _tt_append('<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<title>\xe5\xb1\x95\xe7\xa4\xba\xe4\xb8\x8a\xe4\xbc\xa0\xe7\x9a\x84\xe5\x9b\xbe\xe7\x89\x87</title>\n</head>\n<body>\n<img src="/static/images/')  # pic_show.html:8
+     5      _tt_tmp = name  # pic_show.html:8
+     6      if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:8
+     7      else: _tt_tmp = _tt_utf8(str(_tt_tmp))  # pic_show.html:8
+     8      _tt_tmp = _tt_utf8(xhtml_escape(_tt_tmp))  # pic_show.html:8
+     9      _tt_append(_tt_tmp)  # pic_show.html:8
+    10      _tt_append('"/>\n<!--<img src="')  # pic_show.html:9
+    11      _tt_tmp = static_url('/images/'+{{name  # pic_show.html:9
+    12      if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:9
+    13      else: _tt_tmp = _tt_utf8(str(_tt_tmp))  # pic_show.html:9
+    14      _tt_tmp = _tt_utf8(xhtml_escape(_tt_tmp))  # pic_show.html:9
+    15      _tt_append(_tt_tmp)  # pic_show.html:9
+    16      _tt_append(')}}">-->\n</body>\n</html>')  # pic_show.html:11
+    17      return _tt_utf8('').join(_tt_buffer)  # pic_show.html:0
+[E 171106 17:13:12 web:1524] Uncaught exception POST /pic (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/pic', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Origin': 'http://127.0.0.1:8000', 'Content-Length': '31510', 'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'Upgrade-Insecure-Requests': '1', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:8000/pic', 'Cache-Control': 'max-age=0', 'Cookie': '_xsrf=2|3fc93e23|9e6d7eca95d4c6d9770849d2888d3bab|1509959449', 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36', 'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundaryjLlkLBvhErk9MbAV'})
+    Traceback (most recent call last):
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 1443, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/python/tornado_01/tornado_study/handlers/up_show_pic.py", line 34, in post
+        self.render("pic_show.html", name=img_name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 699, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 803, in render_string
+        t = loader.load(template_name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 424, in load
+        self.templates[name] = self._create_template(name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 452, in _create_template
+        template = Template(f.read(), name=name, loader=self)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 314, in __init__
+        "exec", dont_inherit=True)
+      File "pic_show_html.generated.py", line 12
+        if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:9
+                                                ^
+    SyntaxError: invalid syntax
+[E 171106 17:13:12 web:1946] 500 POST /pic (127.0.0.1) 87.45ms
+[I 171106 17:13:26 web:1946] 200 GET /pic (127.0.0.1) 16.56ms
+[I 171106 17:13:31 log:109] select version()
+[I 171106 17:13:31 log:109] {}
+[I 171106 17:13:31 log:109] select current_schema()
+[I 171106 17:13:31 log:109] {}
+[I 171106 17:13:31 log:109] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+[I 171106 17:13:31 log:109] {}
+[I 171106 17:13:31 log:109] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+[I 171106 17:13:31 log:109] {}
+[I 171106 17:13:31 log:109] show standard_conforming_strings
+[I 171106 17:13:31 log:109] {}
+[I 171106 17:13:31 log:109] BEGIN (implicit)
+[I 171106 17:13:31 log:109] INSERT INTO pictures (name, imge) VALUES (%(name)s, %(imge)s) RETURNING pictures.id
+[I 171106 17:13:31 log:109] {'name': u'2017-04-10 11-54-57\u5c4f\u5e55\u622a\u56fe.png', 'imge': <psycopg2.extensions.Binary object at 0x7f1bedf21ad0>}
+[I 171106 17:13:31 log:109] COMMIT
+[E 171106 17:13:31 template:317] pic_show.html code:
+     1  def _tt_execute():  # pic_show.html:0
+     2      _tt_buffer = []  # pic_show.html:0
+     3      _tt_append = _tt_buffer.append  # pic_show.html:0
+     4      _tt_append('<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<title>\xe5\xb1\x95\xe7\xa4\xba\xe4\xb8\x8a\xe4\xbc\xa0\xe7\x9a\x84\xe5\x9b\xbe\xe7\x89\x87</title>\n</head>\n<body>\n<img src="/static/images/')  # pic_show.html:8
+     5      _tt_tmp = name  # pic_show.html:8
+     6      if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:8
+     7      else: _tt_tmp = _tt_utf8(str(_tt_tmp))  # pic_show.html:8
+     8      _tt_tmp = _tt_utf8(xhtml_escape(_tt_tmp))  # pic_show.html:8
+     9      _tt_append(_tt_tmp)  # pic_show.html:8
+    10      _tt_append('"/>\n<!--<img src="')  # pic_show.html:9
+    11      _tt_tmp = static_url('/images/'+{{name  # pic_show.html:9
+    12      if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:9
+    13      else: _tt_tmp = _tt_utf8(str(_tt_tmp))  # pic_show.html:9
+    14      _tt_tmp = _tt_utf8(xhtml_escape(_tt_tmp))  # pic_show.html:9
+    15      _tt_append(_tt_tmp)  # pic_show.html:9
+    16      _tt_append(')}}">-->\n</body>\n</html>')  # pic_show.html:11
+    17      return _tt_utf8('').join(_tt_buffer)  # pic_show.html:0
+[E 171106 17:13:31 web:1524] Uncaught exception POST /pic (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/pic', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Origin': 'http://127.0.0.1:8000', 'Content-Length': '31510', 'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'Upgrade-Insecure-Requests': '1', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:8000/pic', 'Cache-Control': 'max-age=0', 'Cookie': '_xsrf=2|3fc93e23|9e6d7eca95d4c6d9770849d2888d3bab|1509959449', 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36', 'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundaryq2kflqo5MpkVJ940'})
+    Traceback (most recent call last):
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 1443, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/python/tornado_01/tornado_study/handlers/up_show_pic.py", line 34, in post
+        self.render("pic_show.html", name=img_name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 699, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 803, in render_string
+        t = loader.load(template_name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 424, in load
+        self.templates[name] = self._create_template(name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 452, in _create_template
+        template = Template(f.read(), name=name, loader=self)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 314, in __init__
+        "exec", dont_inherit=True)
+      File "pic_show_html.generated.py", line 12
+        if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:9
+                                                ^
+    SyntaxError: invalid syntax
+[E 171106 17:13:31 web:1946] 500 POST /pic (127.0.0.1) 205.52ms
+[I 171106 17:14:28 web:1946] 200 GET /pic (127.0.0.1) 19.96ms
+[W 171106 17:14:28 web:1946] 404 GET /favicon.ico (127.0.0.1) 4.53ms
+[I 171106 17:14:42 log:109] select version()
+[I 171106 17:14:42 log:109] {}
+[I 171106 17:14:42 log:109] select current_schema()
+[I 171106 17:14:42 log:109] {}
+[I 171106 17:14:42 log:109] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+[I 171106 17:14:42 log:109] {}
+[I 171106 17:14:42 log:109] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+[I 171106 17:14:42 log:109] {}
+[I 171106 17:14:42 log:109] show standard_conforming_strings
+[I 171106 17:14:42 log:109] {}
+[I 171106 17:14:42 log:109] BEGIN (implicit)
+[I 171106 17:14:42 log:109] INSERT INTO pictures (name, imge) VALUES (%(name)s, %(imge)s) RETURNING pictures.id
+[I 171106 17:14:42 log:109] {'name': u'm.jpg', 'imge': <psycopg2.extensions.Binary object at 0x7f3db156ec10>}
+[I 171106 17:14:42 log:109] COMMIT
+[E 171106 17:14:42 template:317] pic_show.html code:
+     1  def _tt_execute():  # pic_show.html:0
+     2      _tt_buffer = []  # pic_show.html:0
+     3      _tt_append = _tt_buffer.append  # pic_show.html:0
+     4      _tt_append('<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<title>\xe5\xb1\x95\xe7\xa4\xba\xe4\xb8\x8a\xe4\xbc\xa0\xe7\x9a\x84\xe5\x9b\xbe\xe7\x89\x87</title>\n</head>\n<body>\n<img src="/static/images/')  # pic_show.html:8
+     5      _tt_tmp = name  # pic_show.html:8
+     6      if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:8
+     7      else: _tt_tmp = _tt_utf8(str(_tt_tmp))  # pic_show.html:8
+     8      _tt_tmp = _tt_utf8(xhtml_escape(_tt_tmp))  # pic_show.html:8
+     9      _tt_append(_tt_tmp)  # pic_show.html:8
+    10      _tt_append('"/>\n<!--<img src="')  # pic_show.html:9
+    11      _tt_tmp = static_url('/images/'+{{name  # pic_show.html:9
+    12      if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:9
+    13      else: _tt_tmp = _tt_utf8(str(_tt_tmp))  # pic_show.html:9
+    14      _tt_tmp = _tt_utf8(xhtml_escape(_tt_tmp))  # pic_show.html:9
+    15      _tt_append(_tt_tmp)  # pic_show.html:9
+    16      _tt_append(')}}">-->\n</body>\n</html>')  # pic_show.html:11
+    17      return _tt_utf8('').join(_tt_buffer)  # pic_show.html:0
+[E 171106 17:14:42 web:1524] Uncaught exception POST /pic (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/pic', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Origin': 'http://127.0.0.1:8000', 'Content-Length': '13736', 'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'Upgrade-Insecure-Requests': '1', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:8000/pic', 'Cache-Control': 'max-age=0', 'Cookie': '_xsrf=2|c55e0d4d|c3df2864e3bcebcd719ab456c71f2f2f|1509959668', 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36', 'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundaryaiZAPXC2iOMYDCtk'})
+    Traceback (most recent call last):
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 1443, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/python/tornado_01/tornado_study/handlers/up_show_pic.py", line 34, in post
+        self.render("pic_show.html", name=img_name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 699, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 803, in render_string
+        t = loader.load(template_name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 424, in load
+        self.templates[name] = self._create_template(name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 452, in _create_template
+        template = Template(f.read(), name=name, loader=self)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 314, in __init__
+        "exec", dont_inherit=True)
+      File "pic_show_html.generated.py", line 12
+        if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:9
+                                                ^
+    SyntaxError: invalid syntax
+[E 171106 17:14:42 web:1946] 500 POST /pic (127.0.0.1) 199.44ms
+[I 171106 17:15:30 web:1946] 200 GET /pic (127.0.0.1) 1.76ms
+[I 171106 17:15:59 log:109] select version()
+[I 171106 17:15:59 log:109] {}
+[I 171106 17:15:59 log:109] select current_schema()
+[I 171106 17:15:59 log:109] {}
+[I 171106 17:15:59 log:109] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+[I 171106 17:15:59 log:109] {}
+[I 171106 17:15:59 log:109] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+[I 171106 17:15:59 log:109] {}
+[I 171106 17:15:59 log:109] show standard_conforming_strings
+[I 171106 17:15:59 log:109] {}
+[I 171106 17:15:59 log:109] BEGIN (implicit)
+[I 171106 17:15:59 log:109] INSERT INTO pictures (name, imge) VALUES (%(name)s, %(imge)s) RETURNING pictures.id
+[I 171106 17:15:59 log:109] {'name': u'2017-04-10 11-54-57\u5c4f\u5e55\u622a\u56fe.png', 'imge': <psycopg2.extensions.Binary object at 0x7f3db1117c10>}
+[I 171106 17:15:59 log:109] COMMIT
+[E 171106 17:15:59 template:317] pic_show.html code:
+     1  def _tt_execute():  # pic_show.html:0
+     2      _tt_buffer = []  # pic_show.html:0
+     3      _tt_append = _tt_buffer.append  # pic_show.html:0
+     4      _tt_append('<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<title>\xe5\xb1\x95\xe7\xa4\xba\xe4\xb8\x8a\xe4\xbc\xa0\xe7\x9a\x84\xe5\x9b\xbe\xe7\x89\x87</title>\n</head>\n<body>\n<img src="/static/images/')  # pic_show.html:8
+     5      _tt_tmp = name  # pic_show.html:8
+     6      if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:8
+     7      else: _tt_tmp = _tt_utf8(str(_tt_tmp))  # pic_show.html:8
+     8      _tt_tmp = _tt_utf8(xhtml_escape(_tt_tmp))  # pic_show.html:8
+     9      _tt_append(_tt_tmp)  # pic_show.html:8
+    10      _tt_append('"/>\n<!--<img src="')  # pic_show.html:9
+    11      _tt_tmp = static_url('/images/'+{{name  # pic_show.html:9
+    12      if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:9
+    13      else: _tt_tmp = _tt_utf8(str(_tt_tmp))  # pic_show.html:9
+    14      _tt_tmp = _tt_utf8(xhtml_escape(_tt_tmp))  # pic_show.html:9
+    15      _tt_append(_tt_tmp)  # pic_show.html:9
+    16      _tt_append(')}}">-->\n</body>\n</html>')  # pic_show.html:11
+    17      return _tt_utf8('').join(_tt_buffer)  # pic_show.html:0
+[E 171106 17:15:59 web:1524] Uncaught exception POST /pic (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/pic', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Origin': 'http://127.0.0.1:8000', 'Content-Length': '31510', 'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'Upgrade-Insecure-Requests': '1', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:8000/pic', 'Cache-Control': 'max-age=0', 'Cookie': '_xsrf=2|dbd38498|b0e62523358343da37108d8b1dae6169|1509959730', 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36', 'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundaryBuiMwyjdEnht0Whe'})
+    Traceback (most recent call last):
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 1443, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/python/tornado_01/tornado_study/handlers/up_show_pic.py", line 34, in post
+        self.render("pic_show.html", name=img_name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 699, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 803, in render_string
+        t = loader.load(template_name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 424, in load
+        self.templates[name] = self._create_template(name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 452, in _create_template
+        template = Template(f.read(), name=name, loader=self)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 314, in __init__
+        "exec", dont_inherit=True)
+      File "pic_show_html.generated.py", line 12
+        if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:9
+                                                ^
+    SyntaxError: invalid syntax
+[E 171106 17:15:59 web:1946] 500 POST /pic (127.0.0.1) 54.03ms
+[I 171106 17:18:51 web:1946] 200 GET /pic (127.0.0.1) 14.08ms
+[W 171106 17:18:51 web:1946] 404 GET /favicon.ico (127.0.0.1) 3.73ms
+[I 171106 17:19:13 log:109] select version()
+[I 171106 17:19:13 log:109] {}
+[I 171106 17:19:13 log:109] select current_schema()
+[I 171106 17:19:13 log:109] {}
+[I 171106 17:19:13 log:109] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+[I 171106 17:19:13 log:109] {}
+[I 171106 17:19:13 log:109] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+[I 171106 17:19:13 log:109] {}
+[I 171106 17:19:13 log:109] show standard_conforming_strings
+[I 171106 17:19:13 log:109] {}
+[I 171106 17:19:13 log:109] BEGIN (implicit)
+[I 171106 17:19:13 log:109] INSERT INTO pictures (name, imge) VALUES (%(name)s, %(imge)s) RETURNING pictures.id
+[I 171106 17:19:13 log:109] {'name': u'sys', 'imge': <psycopg2.extensions.Binary object at 0x7ff53d678ad0>}
+[I 171106 17:19:13 log:109] COMMIT
+[E 171106 17:19:13 template:317] pic_show.html code:
+     1  def _tt_execute():  # pic_show.html:0
+     2      _tt_buffer = []  # pic_show.html:0
+     3      _tt_append = _tt_buffer.append  # pic_show.html:0
+     4      _tt_append('<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<title>\xe5\xb1\x95\xe7\xa4\xba\xe4\xb8\x8a\xe4\xbc\xa0\xe7\x9a\x84\xe5\x9b\xbe\xe7\x89\x87</title>\n</head>\n<body>\n<img src="/static/images/')  # pic_show.html:8
+     5      _tt_tmp = name  # pic_show.html:8
+     6      if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:8
+     7      else: _tt_tmp = _tt_utf8(str(_tt_tmp))  # pic_show.html:8
+     8      _tt_tmp = _tt_utf8(xhtml_escape(_tt_tmp))  # pic_show.html:8
+     9      _tt_append(_tt_tmp)  # pic_show.html:8
+    10      _tt_append('"/>\n<img src="')  # pic_show.html:9
+    11      _tt_tmp = static_url('/images/'+{{name  # pic_show.html:9
+    12      if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:9
+    13      else: _tt_tmp = _tt_utf8(str(_tt_tmp))  # pic_show.html:9
+    14      _tt_tmp = _tt_utf8(xhtml_escape(_tt_tmp))  # pic_show.html:9
+    15      _tt_append(_tt_tmp)  # pic_show.html:9
+    16      _tt_append(')}}"/>\n</body>\n</html>')  # pic_show.html:11
+    17      return _tt_utf8('').join(_tt_buffer)  # pic_show.html:0
+[E 171106 17:19:13 web:1524] Uncaught exception POST /pic (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/pic', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Origin': 'http://127.0.0.1:8000', 'Content-Length': '1829905', 'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'Upgrade-Insecure-Requests': '1', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:8000/pic', 'Cache-Control': 'max-age=0', 'Cookie': '_xsrf=2|1c151fdf|dfc486440ce40a31d8b485fd9dcb8253|1509959931', 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36', 'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundaryrMwNTTKowQM0aPWm'})
+    Traceback (most recent call last):
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 1443, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/python/tornado_01/tornado_study/handlers/up_show_pic.py", line 34, in post
+        self.render("pic_show.html", name=img_name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 699, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 803, in render_string
+        t = loader.load(template_name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 424, in load
+        self.templates[name] = self._create_template(name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 452, in _create_template
+        template = Template(f.read(), name=name, loader=self)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 314, in __init__
+        "exec", dont_inherit=True)
+      File "pic_show_html.generated.py", line 12
+        if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:9
+                                                ^
+    SyntaxError: invalid syntax
+[E 171106 17:19:13 web:1946] 500 POST /pic (127.0.0.1) 532.97ms
+[I 171106 17:20:39 web:1946] 200 GET /pic (127.0.0.1) 17.37ms
+[I 171106 17:20:47 log:109] select version()
+[I 171106 17:20:47 log:109] {}
+[I 171106 17:20:47 log:109] select current_schema()
+[I 171106 17:20:47 log:109] {}
+[I 171106 17:20:47 log:109] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+[I 171106 17:20:47 log:109] {}
+[I 171106 17:20:47 log:109] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+[I 171106 17:20:47 log:109] {}
+[I 171106 17:20:47 log:109] show standard_conforming_strings
+[I 171106 17:20:47 log:109] {}
+[I 171106 17:20:47 log:109] BEGIN (implicit)
+[I 171106 17:20:47 log:109] INSERT INTO pictures (name, imge) VALUES (%(name)s, %(imge)s) RETURNING pictures.id
+[I 171106 17:20:47 log:109] {'name': u'm.jpg', 'imge': <psycopg2.extensions.Binary object at 0x7f963247a030>}
+[I 171106 17:20:47 log:109] COMMIT
+[E 171106 17:20:47 template:317] pic_show.html code:
+     1  def _tt_execute():  # pic_show.html:0
+     2      _tt_buffer = []  # pic_show.html:0
+     3      _tt_append = _tt_buffer.append  # pic_show.html:0
+     4      _tt_append('<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<title>\xe5\xb1\x95\xe7\xa4\xba\xe4\xb8\x8a\xe4\xbc\xa0\xe7\x9a\x84\xe5\x9b\xbe\xe7\x89\x87</title>\n</head>\n<body>\n<img src="/static/images/')  # pic_show.html:8
+     5      _tt_tmp = name  # pic_show.html:8
+     6      if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:8
+     7      else: _tt_tmp = _tt_utf8(str(_tt_tmp))  # pic_show.html:8
+     8      _tt_tmp = _tt_utf8(xhtml_escape(_tt_tmp))  # pic_show.html:8
+     9      _tt_append(_tt_tmp)  # pic_show.html:8
+    10      _tt_append('"/>\n<img src="')  # pic_show.html:9
+    11      _tt_tmp = static_url('/images/'+{{name  # pic_show.html:9
+    12      if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:9
+    13      else: _tt_tmp = _tt_utf8(str(_tt_tmp))  # pic_show.html:9
+    14      _tt_tmp = _tt_utf8(xhtml_escape(_tt_tmp))  # pic_show.html:9
+    15      _tt_append(_tt_tmp)  # pic_show.html:9
+    16      _tt_append(')}}"/>\n</body>\n</html>')  # pic_show.html:11
+    17      return _tt_utf8('').join(_tt_buffer)  # pic_show.html:0
+[E 171106 17:20:47 web:1524] Uncaught exception POST /pic (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/pic', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Origin': 'http://127.0.0.1:8000', 'Content-Length': '13736', 'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'Upgrade-Insecure-Requests': '1', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:8000/pic', 'Cache-Control': 'max-age=0', 'Cookie': '_xsrf=2|1c151fdf|dfc486440ce40a31d8b485fd9dcb8253|1509959931', 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36', 'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundaryHS9Q5oBxEFgXYL8l'})
+    Traceback (most recent call last):
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 1443, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/python/tornado_01/tornado_study/handlers/up_show_pic.py", line 34, in post
+        self.render("pic_show.html", name=img_name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 699, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 803, in render_string
+        t = loader.load(template_name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 424, in load
+        self.templates[name] = self._create_template(name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 452, in _create_template
+        template = Template(f.read(), name=name, loader=self)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 314, in __init__
+        "exec", dont_inherit=True)
+      File "pic_show_html.generated.py", line 12
+        if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:9
+                                                ^
+    SyntaxError: invalid syntax
+[E 171106 17:20:47 web:1946] 500 POST /pic (127.0.0.1) 224.59ms
+[I 171106 22:29:05 web:1946] 200 GET /pic (127.0.0.1) 35.00ms
+[W 171106 22:29:05 web:1946] 404 GET /favicon.ico (127.0.0.1) 34.91ms
+[I 171106 22:29:11 log:109] select version()
+[I 171106 22:29:11 log:109] {}
+[I 171106 22:29:12 log:109] select current_schema()
+[I 171106 22:29:12 log:109] {}
+[I 171106 22:29:12 log:109] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+[I 171106 22:29:12 log:109] {}
+[I 171106 22:29:12 log:109] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+[I 171106 22:29:12 log:109] {}
+[I 171106 22:29:12 log:109] show standard_conforming_strings
+[I 171106 22:29:12 log:109] {}
+[I 171106 22:29:12 log:109] BEGIN (implicit)
+[I 171106 22:29:12 log:109] INSERT INTO pictures (name, imge) VALUES (%(name)s, %(imge)s) RETURNING pictures.id
+[I 171106 22:29:12 log:109] {'name': u'm.jpg', 'imge': <psycopg2.extensions.Binary object at 0x7f791d020210>}
+[I 171106 22:29:12 log:109] COMMIT
+[E 171106 22:29:12 template:317] pic_show.html code:
+     1  def _tt_execute():  # pic_show.html:0
+     2      _tt_buffer = []  # pic_show.html:0
+     3      _tt_append = _tt_buffer.append  # pic_show.html:0
+     4      _tt_append('<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<title>\xe5\xb1\x95\xe7\xa4\xba\xe4\xb8\x8a\xe4\xbc\xa0\xe7\x9a\x84\xe5\x9b\xbe\xe7\x89\x87</title>\n</head>\n<body>\n<img src="/static/images/')  # pic_show.html:8
+     5      _tt_tmp = name  # pic_show.html:8
+     6      if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:8
+     7      else: _tt_tmp = _tt_utf8(str(_tt_tmp))  # pic_show.html:8
+     8      _tt_tmp = _tt_utf8(xhtml_escape(_tt_tmp))  # pic_show.html:8
+     9      _tt_append(_tt_tmp)  # pic_show.html:8
+    10      _tt_append('"/>\n<img src="')  # pic_show.html:9
+    11      _tt_tmp = static_url('/images/'+{{name  # pic_show.html:9
+    12      if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:9
+    13      else: _tt_tmp = _tt_utf8(str(_tt_tmp))  # pic_show.html:9
+    14      _tt_tmp = _tt_utf8(xhtml_escape(_tt_tmp))  # pic_show.html:9
+    15      _tt_append(_tt_tmp)  # pic_show.html:9
+    16      _tt_append(')}}"/>\n</body>\n</html>')  # pic_show.html:12
+    17      return _tt_utf8('').join(_tt_buffer)  # pic_show.html:0
+[E 171106 22:29:12 web:1524] Uncaught exception POST /pic (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/pic', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Origin': 'http://127.0.0.1:8000', 'Content-Length': '13736', 'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'Upgrade-Insecure-Requests': '1', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:8000/pic', 'Cache-Control': 'max-age=0', 'Cookie': '_xsrf=2|ac676ffd|18c49e955464ba5ba66c13533179ff3f|1509978545', 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36', 'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundarybQvq0DcS7BnFJVmX'})
+    Traceback (most recent call last):
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 1443, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/python/tornado_01/tornado_study/handlers/up_show_pic.py", line 34, in post
+        self.render("pic_show.html", name=img_name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 699, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 803, in render_string
+        t = loader.load(template_name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 424, in load
+        self.templates[name] = self._create_template(name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 452, in _create_template
+        template = Template(f.read(), name=name, loader=self)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 314, in __init__
+        "exec", dont_inherit=True)
+      File "pic_show_html.generated.py", line 12
+        if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:9
+                                                ^
+    SyntaxError: invalid syntax
+[E 171106 22:29:12 web:1946] 500 POST /pic (127.0.0.1) 1060.81ms
+[I 171106 22:30:21 web:1946] 200 GET /pic (127.0.0.1) 51.07ms
+[I 171106 22:30:26 log:109] select version()
+[I 171106 22:30:26 log:109] {}
+[I 171106 22:30:26 log:109] select current_schema()
+[I 171106 22:30:26 log:109] {}
+[I 171106 22:30:26 log:109] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+[I 171106 22:30:26 log:109] {}
+[I 171106 22:30:26 log:109] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+[I 171106 22:30:26 log:109] {}
+[I 171106 22:30:26 log:109] show standard_conforming_strings
+[I 171106 22:30:26 log:109] {}
+[I 171106 22:30:26 log:109] BEGIN (implicit)
+[I 171106 22:30:26 log:109] INSERT INTO pictures (name, imge) VALUES (%(name)s, %(imge)s) RETURNING pictures.id
+[I 171106 22:30:26 log:109] {'name': u'm.jpg', 'imge': <psycopg2.extensions.Binary object at 0x7f791e169eb8>}
+[I 171106 22:30:26 log:109] COMMIT
+[E 171106 22:30:26 template:317] pic_show.html code:
+     1  def _tt_execute():  # pic_show.html:0
+     2      _tt_buffer = []  # pic_show.html:0
+     3      _tt_append = _tt_buffer.append  # pic_show.html:0
+     4      _tt_append('<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<title>\xe5\xb1\x95\xe7\xa4\xba\xe4\xb8\x8a\xe4\xbc\xa0\xe7\x9a\x84\xe5\x9b\xbe\xe7\x89\x87</title>\n</head>\n<body>\n<img src="/static/images/')  # pic_show.html:8
+     5      _tt_tmp = name  # pic_show.html:8
+     6      if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:8
+     7      else: _tt_tmp = _tt_utf8(str(_tt_tmp))  # pic_show.html:8
+     8      _tt_tmp = _tt_utf8(xhtml_escape(_tt_tmp))  # pic_show.html:8
+     9      _tt_append(_tt_tmp)  # pic_show.html:8
+    10      _tt_append('">\n<img src="')  # pic_show.html:9
+    11      _tt_tmp = static_url('/images/'+{{name  # pic_show.html:9
+    12      if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:9
+    13      else: _tt_tmp = _tt_utf8(str(_tt_tmp))  # pic_show.html:9
+    14      _tt_tmp = _tt_utf8(xhtml_escape(_tt_tmp))  # pic_show.html:9
+    15      _tt_append(_tt_tmp)  # pic_show.html:9
+    16      _tt_append(')}}">\n</body>\n</html>')  # pic_show.html:12
+    17      return _tt_utf8('').join(_tt_buffer)  # pic_show.html:0
+[E 171106 22:30:26 web:1524] Uncaught exception POST /pic (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/pic', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Origin': 'http://127.0.0.1:8000', 'Content-Length': '13736', 'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'Upgrade-Insecure-Requests': '1', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:8000/pic', 'Cache-Control': 'max-age=0', 'Cookie': '_xsrf=2|ac676ffd|18c49e955464ba5ba66c13533179ff3f|1509978545', 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36', 'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundarygGXWB21FkacUZ6zD'})
+    Traceback (most recent call last):
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 1443, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/python/tornado_01/tornado_study/handlers/up_show_pic.py", line 34, in post
+        self.render("pic_show.html", name=img_name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 699, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 803, in render_string
+        t = loader.load(template_name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 424, in load
+        self.templates[name] = self._create_template(name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 452, in _create_template
+        template = Template(f.read(), name=name, loader=self)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 314, in __init__
+        "exec", dont_inherit=True)
+      File "pic_show_html.generated.py", line 12
+        if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:9
+                                                ^
+    SyntaxError: invalid syntax
+[E 171106 22:30:26 web:1946] 500 POST /pic (127.0.0.1) 229.88ms
+[I 171106 22:35:28 web:1946] 200 GET /pic (127.0.0.1) 13.41ms
+[I 171106 22:35:33 log:109] select version()
+[I 171106 22:35:33 log:109] {}
+[I 171106 22:35:33 log:109] select current_schema()
+[I 171106 22:35:33 log:109] {}
+[I 171106 22:35:33 log:109] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+[I 171106 22:35:33 log:109] {}
+[I 171106 22:35:33 log:109] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+[I 171106 22:35:33 log:109] {}
+[I 171106 22:35:33 log:109] show standard_conforming_strings
+[I 171106 22:35:33 log:109] {}
+[I 171106 22:35:33 log:109] BEGIN (implicit)
+[I 171106 22:35:33 log:109] INSERT INTO pictures (name, imge) VALUES (%(name)s, %(imge)s) RETURNING pictures.id
+[I 171106 22:35:33 log:109] {'name': u'm.jpg', 'imge': <psycopg2.extensions.Binary object at 0x7fac33cb5030>}
+[I 171106 22:35:33 log:109] COMMIT
+[E 171106 22:35:33 template:317] pic_show.html code:
+     1  def _tt_execute():  # pic_show.html:0
+     2      _tt_buffer = []  # pic_show.html:0
+     3      _tt_append = _tt_buffer.append  # pic_show.html:0
+     4      _tt_append('<!DOCTYPE html>\n<html lang="zh">\n<head>\n<meta charset="UTF-8">\n<title>\xe5\xb1\x95\xe7\xa4\xba\xe4\xb8\x8a\xe4\xbc\xa0\xe7\x9a\x84\xe5\x9b\xbe\xe7\x89\x87</title>\n</head>\n<body>\n<img src="/static/images/')  # pic_show.html:8
+     5      _tt_tmp = name  # pic_show.html:8
+     6      if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:8
+     7      else: _tt_tmp = _tt_utf8(str(_tt_tmp))  # pic_show.html:8
+     8      _tt_tmp = _tt_utf8(xhtml_escape(_tt_tmp))  # pic_show.html:8
+     9      _tt_append(_tt_tmp)  # pic_show.html:8
+    10      _tt_append('"/>\n<img src="')  # pic_show.html:9
+    11      _tt_tmp = static_url('/images/'+{{name  # pic_show.html:9
+    12      if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:9
+    13      else: _tt_tmp = _tt_utf8(str(_tt_tmp))  # pic_show.html:9
+    14      _tt_tmp = _tt_utf8(xhtml_escape(_tt_tmp))  # pic_show.html:9
+    15      _tt_append(_tt_tmp)  # pic_show.html:9
+    16      _tt_append(')}}"/>\n</body>\n</html>')  # pic_show.html:11
+    17      return _tt_utf8('').join(_tt_buffer)  # pic_show.html:0
+[E 171106 22:35:33 web:1524] Uncaught exception POST /pic (127.0.0.1)
+    HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/pic', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Origin': 'http://127.0.0.1:8000', 'Content-Length': '13736', 'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip, deflate', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'Upgrade-Insecure-Requests': '1', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:8000/pic', 'Cache-Control': 'max-age=0', 'Cookie': '_xsrf=2|ac676ffd|18c49e955464ba5ba66c13533179ff3f|1509978545', 'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36', 'Content-Type': 'multipart/form-data; boundary=----WebKitFormBoundaryUmExFNwBOrtMcvOh'})
+    Traceback (most recent call last):
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 1443, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/python/tornado_01/tornado_study/handlers/up_show_pic.py", line 34, in post
+        self.render("pic_show.html", name=img_name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 699, in render
+        html = self.render_string(template_name, **kwargs)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/web.py", line 803, in render_string
+        t = loader.load(template_name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 424, in load
+        self.templates[name] = self._create_template(name)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 452, in _create_template
+        template = Template(f.read(), name=name, loader=self)
+      File "/home/python/.virtualenvs/tornado_py2/local/lib/python2.7/site-packages/tornado/template.py", line 314, in __init__
+        "exec", dont_inherit=True)
+      File "pic_show_html.generated.py", line 12
+        if isinstance(_tt_tmp, _tt_string_types): _tt_tmp = _tt_utf8(_tt_tmp)  # pic_show.html:9
+                                                ^
+    SyntaxError: invalid syntax
+[E 171106 22:35:34 web:1946] 500 POST /pic (127.0.0.1) 303.86ms
+[I 171106 22:36:10 web:1946] 200 GET /pic (127.0.0.1) 1.84ms
+[I 171106 22:36:14 log:109] select version()
+[I 171106 22:36:14 log:109] {}
+[I 171106 22:36:14 log:109] select current_schema()
+[I 171106 22:36:14 log:109] {}
+[I 171106 22:36:14 log:109] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+[I 171106 22:36:14 log:109] {}
+[I 171106 22:36:14 log:109] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+[I 171106 22:36:14 log:109] {}
+[I 171106 22:36:14 log:109] show standard_conforming_strings
+[I 171106 22:36:14 log:109] {}
+[I 171106 22:36:14 log:109] BEGIN (implicit)
+[I 171106 22:36:14 log:109] INSERT INTO pictures (name, imge) VALUES (%(name)s, %(imge)s) RETURNING pictures.id
+[I 171106 22:36:14 log:109] {'name': u'm.jpg', 'imge': <psycopg2.extensions.Binary object at 0x7fac33cb5030>}
+[I 171106 22:36:14 log:109] COMMIT
+[I 171106 22:36:14 web:1946] 200 POST /pic (127.0.0.1) 73.12ms
+[I 171106 22:36:14 web:1946] 200 GET /static/images/m.jpg (127.0.0.1) 63.32ms

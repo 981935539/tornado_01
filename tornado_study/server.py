@@ -7,7 +7,7 @@ import tornado.ioloop
 from config import settings, log_path
 from urls import urls
 
-tornado.options.defiene("port", default=8000, type=int, help="start server on this port")
+tornado.options.define("port", default=8000, type=int, help="start server on this port")
 
 
 def main():
