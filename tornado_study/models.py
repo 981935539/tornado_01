@@ -8,8 +8,8 @@ import faker
 import random
 
 # 连接数据库
-# engine = create_engine('postgresql://yang:123456@localhost:5432/exampledb', echo=True)
-engine = create_engine('sqlite:////home/python/Databases/test.db')
+engine = create_engine('postgresql://yang:123456@localhost:5432/exampledb', echo=True)
+# engine = create_engine('sqlite:////home/python/Databases/test.db')
 print engine
 Base = declarative_base()
 

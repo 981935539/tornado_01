@@ -9,7 +9,7 @@ settings = dict(
     static_path = os.path.join(os.path.dirname(__file__), "statics"),
     template_path = os.path.join(os.path.dirname(__file__), "templates"),
     cookie_secret = "sjfkdsjfksldjfklsdj9ewohriew",
-    xsrf_cookies = True
+    # xsrf_cookies = True
 )
 
 # logs
