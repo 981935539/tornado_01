@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>新建房源</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <a href="javascript:;" onclick="send_json()">发送post请求数据</a>
+    </body>
+    <script src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        //获取指定Cookie的函数
+        function getCookie(name) {
+            var r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
+            return r ? r[1] : undefined;
+        };
+        $(document).ready(function () {
+            $.get("/xsrf", function () {
+            });
+        });
+        function send_json() {
+            var xsrf=getCookie("_xsrf")
+            var data={
+                "data1":1,
+                "data2":2
+            }
+            var data_json=JSON.stringify(data)
+            $.ajax({
+                url:"/",
+                type:"POST",
+                data:data_json,
+                content_type:"application/json",
+                headers:{
+                    "X-XSRFToken":xsrf
+                },
+                success:function (data) {
+                    alert(data)
+                }
+            });
+        };
+    </script>
+</html>

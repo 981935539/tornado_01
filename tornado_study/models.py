@@ -2,7 +2,8 @@
 
 from sqlalchemy import create_engine, Table
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, Text, ForeignKey
+
+from sqlalchemy import Column, Integer, String, Text, ForeignKey, LargeBinary
 from sqlalchemy.orm import relationship, sessionmaker
 import faker
 import random
@@ -10,6 +11,8 @@ import random
 # 连接数据库
 # engine = create_engine('postgresql://yang:123456@localhost:5432/exampledb', echo=True)
 engine = create_engine('sqlite:////home/python/Databases/test.db')
+engine = create_engine('postgresql://yang:123456@localhost:5432/exampledb', echo=True)
+# engine = create_engine('sqlite:////home/python/Databases/test.db')
 print engine
 Base = declarative_base()
 
@@ -23,6 +26,8 @@ class User(Base):
     password = Column(String(64), nullable=False)
     email = Column(String(64), nullable=False, index=True)
     articles = relationship('Article', backref='author')
+
+    # 一对一关系中uselist禁用
     userinfo = relationship('UserInfo', backref='user', uselist=False)
 
     def __repr__(self):
@@ -50,6 +55,10 @@ class Article(Base):
     content = Column(Text)
     user_id = Column(Integer, ForeignKey('users.id'))
     cate_id = Column(Integer, ForeignKey('categories.id'))
+<<<<<<< HEAD
+=======
+    # secondary 为关联表的表名
+>>>>>>> dev
     tags = relationship('Tag', secondary='article_tag', backref='articles')
 
     def __repr__(self):
@@ -85,6 +94,16 @@ class Tag(Base):
     def __repr__(self):
         return '%s(%r)' % (self.__class__.__name__, self.name)
 
+<<<<<<< HEAD
+=======
+
+class Picture(Base):
+    __tablename__ = "pictures"
+    id = Column(Integer, primary_key=True)
+    name = Column(String(64), nullable=False, index=True)
+    imge = Column(LargeBinary)
+
+>>>>>>> dev
 if __name__ == '__main__':
     # 创建数据表
     Base.metadata.create_all(engine)
@@ -134,3 +153,8 @@ if __name__ == '__main__':
             article.tags.append(tag)
         session.add(article)
     session.commit()
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> dev
